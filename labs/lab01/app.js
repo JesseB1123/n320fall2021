@@ -7,7 +7,8 @@ function getRandom(min, max) {
 class Raindrop {
     constructor() {
         this.x = getRandom(0, 700);
-        this.y = -75;
+        // this.y = -75;
+        this.y = getRandom(-75, 500);
         this.radius = getRandom(25, 75);
         this.colors = [[197, 220, 237], [109, 161, 201], [27, 120, 191]];
         this.color = this.colors[getRandom(0, 2)];
@@ -31,6 +32,7 @@ class Raindrop {
         this.colors = [[197, 220, 237], [109, 161, 201], [27, 120, 191]];
         this.color = this.colors[getRandom(0, 2)];
         this.speed = getRandom(5, 10);
+        dropCounter++;
     }
 }
 
@@ -84,69 +86,18 @@ function draw() {
     background(54, 64, 69);
 
     //draw the 10 raindrops falling
-    myDrops[0].update();
-    myDrops[1].update();
-    myDrops[2].update();
-    myDrops[3].update();
-    myDrops[4].update();
-    myDrops[5].update();
-    myDrops[6].update();
-    myDrops[7].update();
-    myDrops[8].update();
-    myDrops[9].update();
+    myDrops.forEach((Raindrop) => {
+        Raindrop.update();
+    })
+
 
     //loop a drop if it hits the ground
     //return its speed to a manageable level
-    if(myDrops[0].y > 500) {
-        myDrops[0].y = -75;
-        myDrops[0].loop();
-        dropCounter++;
-    }
-    if(myDrops[1].y > 500) {
-        myDrops[1].y = -75;
-        myDrops[1].loop();
-        dropCounter++;
-    }
-    if(myDrops[2].y > 500) {
-        myDrops[2].y = -75;
-        myDrops[2].loop();
-        dropCounter++;
-    }
-    if(myDrops[3].y > 500) {
-        myDrops[3].y = -75;
-        myDrops[3].loop();
-        dropCounter++;
-    }
-    if(myDrops[4].y > 500) {
-        myDrops[4].y = -75;
-        myDrops[4].loop();
-        dropCounter++;
-    }
-    if(myDrops[5].y > 500) {
-        myDrops[5].y = -75;
-        myDrops[5].loop();
-        dropCounter++;
-    }
-    if(myDrops[6].y > 500) {
-        myDrops[6].y = -75;
-        myDrops[6].loop();
-        dropCounter++;
-    }
-    if(myDrops[7].y > 500) {
-        myDrops[7].y = -75;
-        myDrops[7].loop();
-        dropCounter++;
-    }
-    if(myDrops[8].y > 500) {
-        myDrops[8].y = -75;
-        myDrops[8].loop();
-        dropCounter++;
-    }
-    if(myDrops[9].y > 500) {
-        myDrops[9].y = -75;
-        myDrops[9].loop();
-        dropCounter++;
-    }
+    myDrops.forEach((Raindrop)=>{
+        if(Raindrop.y > 500) {
+            Raindrop.loop();
+        }
+    })
 
     //make the ground more blue every 10 drops
     //raise the water level
