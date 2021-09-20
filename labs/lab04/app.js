@@ -7,12 +7,16 @@ var galleryItems = document.getElementsByClassName("gallery__item");
 //1: build in for all items on the screen (nothing to something)
 init();
 function init() {
-    TweenMax.from(title, {duration: 0.7, delay: 0.5, alpha: 0});
-    TweenMax.from(header, {duration: 0.7, delay: 0.8, alpha: 0});
+    TweenMax.from(title, {duration: 0.7, delay: 0.4, alpha: 0});
+    TweenMax.from(header, {duration: 0.7, delay: 0.5, alpha: 0});
     for(let i = 0; i < galleryItems.length; i++) {
-        TweenMax.from(galleryItems[i], {duration: 0.7, delay: 0.8 + (i * 0.1), alpha: 0});
+        TweenMax.from(galleryItems[i], {duration: 0.7, delay: 0.5 + (i * 0.1), alpha: 0});
     }
 }
 
 //2: a mouseOver/highlight for each of the gallery elements
+//DONT FORGET TO ADD "mouseOver" PROPERTIES TO HTML
+
+
 //3: an exit animation for when a gallery element is clicked
+//DONT FORGET TO ADD "onClick" PROPERTIES TO HTML
