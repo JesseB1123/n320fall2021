@@ -34,7 +34,6 @@ p {
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  /* background-color: bisque; */
 }
 .gallery__item {
   background-color: purple;
