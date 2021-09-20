@@ -1,11 +1,10 @@
-//TODO ANIMATIONS
-//1: build in for all items on the screen (nothing to something)
 //collect all page elements
 var title = document.getElementById("title");
 var header = document.getElementById("header");
 var galleryItems = document.getElementsByClassName("gallery__item");
 
-//create and run an animation that will fade all elements onto the screen
+//TODO ANIMATIONS
+//1: build in for all items on the screen (nothing to something)
 init();
 function init() {
     TweenMax.from(title, {duration: 0.7, delay: 0.5, alpha: 0});
